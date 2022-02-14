@@ -22,5 +22,8 @@ app.use('/cms/content', contentRoutes);
 app.get('/', (req, res) => {
     return res.json({status: 'ok'})
 })
+app.get('/favicon.ico', (req, res) => {
+    return res.json({status: 'ok'})
+})
 
 module.exports = app;
