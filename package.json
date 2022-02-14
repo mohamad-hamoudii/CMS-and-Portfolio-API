@@ -4,7 +4,7 @@
   "description": "Mohamad Hamoudi's portfolio content management system",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "author": "Osama Hajj Ali",
   "license": "ISC",
