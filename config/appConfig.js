@@ -19,4 +19,8 @@ app.use(cors());
 app.use('/cms/auth', authRoutes);
 app.use('/cms/content', contentRoutes);
 
+app.get('/', (req, res) => {
+    return res.json({status: 'ok'})
+})
+
 module.exports = app;
