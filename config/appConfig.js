@@ -15,7 +15,7 @@ mongoose.connect(process.env.MONGO_URI, (error) => {
 app.use(helmet());
 app.use(xss());
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
 
 //Routes
 app.use('/cms/auth', authRoutes);
