@@ -10,7 +10,7 @@ const updateAboutInfoText = async (req, res) => {
     try {
         jwt.verify(token, secret);
         // await aboutInfoTextModel.updateOne({ infoText: infoName }, { $set: { text: text } })
-        await aboutInfoTextModel.create({ infoText: infoName }, { text: text })
+        await aboutInfoTextModel.create({ infoText: infoName, text: text  })
 
         return res.json({ status: 'ok' });
     } catch (error) {

@@ -9,9 +9,7 @@ const updateContactLink = async (req, res) => {
 
     try {
         jwt.verify(token, secret);
-        // await videoFileModel.updateOne({ video: videoName }, { $set: { url: url } })
-
-        await videoFileModel.create({ video: videoName, url: url  })
+        await videoFileModel.updateOne({ video: videoName }, { $set: { url: url } })
 
         return res.json({ status: 'ok'});
     } catch (error) {
