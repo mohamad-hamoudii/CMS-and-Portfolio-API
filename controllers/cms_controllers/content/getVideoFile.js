@@ -7,9 +7,9 @@ const getVideoFile = async (req, res) => {
 
     try {
         jwt.verify(token, secret);
-        const video = await videoFileModel.find();
+        const video = await videoFileModel.findOne();
 
-        return res.json({ status: 'ok', videoUrl: video[0].url });
+        return res.json({ status: 'ok', videoUrl: video.url });
     } catch (error) {
         return res.json({ status: 'error', error: error })
     }

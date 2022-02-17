@@ -7,9 +7,9 @@ const getAboutCV = async (req, res) => {
 
     try {
         jwt.verify(token, secret);
-        const cv = await aboutCvModel.find();
+        const cv = await aboutCvModel.findOne();
         
-        return res.json({ status: 'ok', cvUrl: cv[0].url });
+        return res.json({ status: 'ok', cvUrl: cv.url });
     } catch (error) {
         return res.json({ status: 'error', error: error })
     }

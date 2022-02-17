@@ -9,7 +9,8 @@ const updateAboutImage = async (req, res) => {
 
     try {
         jwt.verify(token, secret);
-        await aboutImageModel.updateOne({ image: imageName }, { $set: { url: url } })
+        // await aboutImageModel.updateOne({ image: imageName }, { $set: { url: url } })
+        await aboutImageModel.create({ image: imageName }, { url: url })
 
         return res.json({ status: 'ok' });
     } catch (error) {
