@@ -12,7 +12,7 @@ const getContactLinks = async (req, res) => {
         }
 
         const contactLinks = await contactLinksModel.find();
-        
+
         return res.json({ status: 'ok', contactLinks})
     }catch(error){
         return res.json({status: 'error', error: error})
@@ -42,9 +42,9 @@ const contacts = [
 ]
 const addContactLinks = async () => {
     try {
-        contacts.map(contact => {
-            await contactLinksModel.create(contact)
-        })
+        for (let i = 0; i < contacts.length;i++) {
+            await contactLinksModel.create(contacts[i])
+        }
 
         return true;
     }catch(error){
