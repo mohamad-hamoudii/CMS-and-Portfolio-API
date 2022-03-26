@@ -16,11 +16,9 @@ const updateContactLink = async (req, res) => {
         jwt.verify(token, secret);
 
         if (url) {
-            await contactLinksModel.create({ type: type ,contact: contact, URL: url });
-            // await contactLinksModel.updateOne({ type: type }, { $set: {contact: contact, URL: url} });
+            await contactLinksModel.updateOne({ type: type }, { $set: {contact: contact, URL: url} });
         } else {
-            await contactLinksModel.create({ type: type, contact: contact});
-            // await contactLinksModel.updateOne({ type: type }, { $set: {contact: contact} });
+            await contactLinksModel.updateOne({ type: type }, { $set: {contact: contact} });
         }
         const contactLinks = await contactLinksModel.find();
 
