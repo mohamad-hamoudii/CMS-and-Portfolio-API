@@ -9,7 +9,8 @@ const updateAboutCV = async (req, res) => {
 
     try {
         jwt.verify(token, secret);
-        await aboutCvModel.updateOne({ cv: cvName }, { $set: { url: url } })
+        // await aboutCvModel.updateOne({ cv: cvName }, { $set: { url: url } })
+        await aboutCvModel.updateOne({ cv: cvName , url: url } )
 
         return res.json({ status: 'ok' });
     } catch (error) {
