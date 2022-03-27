@@ -7,7 +7,7 @@ const signIn = async (req, res) => {
     const { email, password } = req.body;
 
     // addAdmin(res, email, password);
-    
+
     const user = await userModel.findOne({ email: email });
 
     if (!user) {
