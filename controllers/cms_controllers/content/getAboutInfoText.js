@@ -7,9 +7,9 @@ const getAboutInfoText = async (req, res) => {
 
     try {
         jwt.verify(token, secret);
-        const infoText = await aboutInfoTextModel.find();
+        const infoText = await aboutInfoTextModel.findOne();
 
-        return res.json({ status: 'ok', text: infoText[0].text });
+        return res.json({ status: 'ok', text: infoText.text });
     } catch (error) {
         return res.json({ status: 'error', error: error })
     }

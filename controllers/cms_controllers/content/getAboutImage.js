@@ -7,9 +7,9 @@ const getAboutImage = async (req, res) => {
 
     try {
         jwt.verify(token, secret);
-        const image = await aboutImageModel.find();
+        const image = await aboutImageModel.findOne();
 
-        return res.json({ status: 'ok', imageUrl: image[0].url });
+        return res.json({ status: 'ok', imageUrl: image.url });
     } catch (error) {
         return res.json({ status: 'error', error: error })
     }

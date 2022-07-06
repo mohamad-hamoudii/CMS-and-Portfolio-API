@@ -7,6 +7,7 @@ const xss = require('xss-clean');
 const mongoose = require('mongoose');
 const authRoutes = require('../routes/cms_routes/authRoutes');
 const contentRoutes = require('../routes/cms_routes/contentRoutes');
+const portfolioRoutes = require('../routes/portfolio_routes/routes');
 
 mongoose.connect(process.env.MONGO_URI, (error) => {
     if(error) console.log(error)
@@ -20,5 +21,6 @@ app.use(cors());
 //Routes
 app.use('/cms/auth', authRoutes);
 app.use('/cms/content', contentRoutes);
+app.use('/portfolio', portfolioRoutes);
 
 module.exports = app;
