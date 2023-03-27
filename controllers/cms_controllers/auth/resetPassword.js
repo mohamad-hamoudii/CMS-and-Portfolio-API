@@ -4,7 +4,6 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
 const resetPassword = async (req, res) => {
-
     const {id, password, token} = req.body;
 
     const user = await userModel.findOne({ id });
